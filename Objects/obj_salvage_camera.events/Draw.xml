@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DRAW" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">draw_sprite_ext(sprite_index,-1,x,y,1,1,0,c_white,1)
+//Draw salvage
+if sprite_index = spr_light_salvage
+{
+    //Draw broken salvage static
+    if global.area2 = spr_interrupted_salvage
+        draw_sprite_ext(global.area2,interruptedimg,x,y,1,1,0,c_white,1)
+    else
+    {
+        //Draws baby in the salvage
+    if health &lt;= 100
+        draw_sprite_ext(global.area2,0,x,y,1,1,0,c_white,1)
+    if health = 91
+        draw_sprite_ext(global.area2,6,x,y,1,1,0,c_white,1)
+    if health &lt;= 90
+        draw_sprite_ext(global.area2,1,x,y,1,1,0,c_white,1)
+    if health = 76
+        draw_sprite_ext(global.area2,6,x,y,1,1,0,c_white,1)    
+    if health &lt;= 75
+        draw_sprite_ext(global.area2,2,x,y,1,1,0,c_white,1)
+    if health = 61
+        draw_sprite_ext(global.area2,6,x,y,1,1,0,c_white,1) 
+    if health &lt;= 60
+        draw_sprite_ext(global.area2,3,x,y,1,1,0,c_white,1) 
+     if health = 41
+        draw_sprite_ext(global.area2,6,x,y,1,1,0,c_white,1)     
+    if health &lt;= 40
+        draw_sprite_ext(global.area2,4,x,y,1,1,0,c_white,1) 
+    if health = 11
+        draw_sprite_ext(global.area2,6,x,y,1,1,0,c_white,1) 
+    if health &lt;= 10
+        draw_sprite_ext(global.area2,5,x,y,1,1,0,c_white,1) 
+    if health = 2
+        draw_sprite_ext(global.area2,6,x,y,1,1,0,c_white,1) 
+    }
+      //Draw a nearly transclurent static effect over the image
+    draw_sprite_ext(sprite_index,-1,x,y,1,1,0,c_white,1)
+ 
+}
+
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

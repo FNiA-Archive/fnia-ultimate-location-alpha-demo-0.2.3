@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if (image_index &gt; 16.2 and sprite_index = spr_jumpscare_baby)
+or (image_index &gt; 14.2 and sprite_index = spr_jumpscare_funtimechica)
+
+    a -= 1
+if a &lt; 1 or (image_index &gt; 10.2 and sprite_index = spr_jumpscare_fredbear)
+{
+    sprite_index = spr_jumpscare_end
+    sound_stop(snd_fredbear_jumpscare)
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

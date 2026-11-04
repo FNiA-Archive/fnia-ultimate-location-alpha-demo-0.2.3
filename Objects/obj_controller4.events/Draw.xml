@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DRAW" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">//Draw left door lights
+if global.leftlights = 1 and global.leftlightsbroken = 0
+{
+    if obj_bonnie2.myroom = 5
+        draw_sprite_ext(spr_officelights,2,0,0,1,1,0,c_white,1)
+    else
+        draw_sprite_ext(spr_officelights,0,0,0,1,1,0,c_white,1)
+}
+//Draw right door lights
+if global.rightlights = 1 and global.rightlightsbroken = 0
+{
+    if obj_chica2.myroom = 5 
+         draw_sprite_ext(spr_officelights,3,0,0,1,1,0,c_white,1)
+    else if obj_mangle.myroom = 5
+         draw_sprite_ext(spr_officelights,4,0,0,1,1,0,c_white,1)
+    else if obj_mangle.myroom = 5 and obj_chica2.myroom = 5
+         draw_sprite_ext(spr_officelights,5,0,0,1,1,0,c_white,1)
+    else 
+         draw_sprite_ext(spr_officelights,1,0,0,1,1,0,c_white,1) 
+}
+
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

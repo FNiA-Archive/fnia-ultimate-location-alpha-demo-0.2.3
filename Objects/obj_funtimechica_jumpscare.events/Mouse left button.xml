@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="MOUSE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">
+      ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare_extras)
+    ID.sprite_index = spr_jumpscare_funtimechica
+    sound_play(snd_goldenfreddy_death) 
+     if instance_exists(obj_camera)
+                with obj_camera event_user(0)
+                if instance_exists(obj_salvage_camera)
+                with obj_salvage_camera event_user(0)
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="OTHER" id="10">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if pull = 1 or sprite_index != spr_ballorastage
+    exit
+sprite_index = spr_run
+image_index = 10.2
+image_speed = -0.3
+pull = 1
+if obj_bonnie.myroom = 6
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_bonnie
+}
+if obj_chica.myroom = 6
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_chica
+}
+global.poweruse -= 1
+sound_loop(snd_energy)
+sound_stop(snd_walk_ballora)
+sound_play(snd_walk_ballora2)
+
+if pull = 1 or sprite_index != spr_ballorastage
+    exit
+sprite_index = spr_run
+image_index = 10.2
+image_speed = -0.3
+pull = 1
+if obj_bonnie2.myroom = 6
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_bonnie
+}
+if obj_chica2.myroom = 6
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_chica
+}
+if obj_mangle.myroom = 6
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_mangle
+}
+if obj_funtimechica.myroom = 4
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_funtimechica
+}
+if obj_baby.myroom = 4
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_foxy
+}
+if obj_springbonnie.myroom = 7
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_springbonnie
+}
+if obj_ballora.myroom = 4
+{
+    ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_ballora
+}
+sound_loop(snd_energy)
+sound_stop(snd_walk_ballora)
+sound_play(snd_walk_ballora2)
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

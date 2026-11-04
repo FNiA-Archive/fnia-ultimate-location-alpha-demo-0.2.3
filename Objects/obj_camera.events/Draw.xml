@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DRAW" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">draw_sprite_ext(sprite_index,-1,x,y,1,1,0,c_white,1)
+//Draw cameras
+if sprite_index = spr_cameraforeground
+{
+    //Draw broken camera static
+    if global.area = spr_interrupted
+        draw_sprite_ext(global.area,interruptedimg,x,y,1,1,0,c_white,1)
+    else
+    {
+    //Draws camera image and make it move horizontally
+    draw_sprite_ext(global.area,global.myimg,x-184-offset,y,1,1,0,c_white,1)
+    }
+    //Draw a nearly transclurent static effect over the image
+    draw_sprite_ext(spr_interrupted,interruptedimg,x,y,1,1,0,c_white,0.2)
+    draw_sprite_ext(sprite_index,-1,x,y,1,1,0,c_white,1)
+    draw_sprite_ext(spr_map,-1,view_xview[0]+308,view_yview[0]+192,1,1,0,c_white,1)
+}
+
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

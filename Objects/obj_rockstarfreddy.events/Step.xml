@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if goingback = 0
+    movetime -= 1
+else
+    backtimer -= 1
+//When "movetime" is less than 0, it'll make the animatronic move from one room to another and breaks temporarily the cameras.
+if movetime &lt; 0
+{
+    if myroom != (3)
+    movetime = mymovetime
+else
+    movetime = 130+random(500) // time Rockstar Freddy stays at the door (use b.pillow to make her leave)
+    //Makes animatronic move from one room to another
+    if myroom = 0
+     {
+        if obj_mapcamera1a.on = 1 or obj_mapcamera7.on = 1
+        and instance_exists(obj_camera)
+        {
+            with obj_mapcamera1a broken = 1
+            with obj_mapcamera1a alarm[0] = 150
+            with obj_mapcamera7 broken = 1
+            with obj_mapcamera7 alarm[0] = 150
+            sound_play(snd_static)
+        }
+        myroom = 1
+        
+    }
+    else if myroom = 1
+    {
+        if obj_mapcamera7.on = 1 or obj_mapcamera7.on = 1
+        and instance_exists(obj_camera)
+        {
+            with obj_mapcamera7 broken = 1
+            with obj_mapcamera7 alarm[0] = 150
+            with obj_mapcamera7 broken = 1
+            with obj_mapcamera7 alarm[0] = 150
+            sound_play(snd_static)
+        }
+        myroom = 2
+        
+    }
+    else if myroom = 2
+    {
+        if obj_mapcamera7.on = 1 or obj_mapcamera4b.on = 1
+        and instance_exists(obj_camera)
+        {
+            with obj_mapcamera7 broken = 1
+            with obj_mapcamera7 alarm[0] = 150
+            with obj_mapcamera4b broken = 1
+            with obj_mapcamera4b alarm[0] = 150
+            sound_play(snd_static)
+        }
+        myroom = 3
+    }
+    else if myroom = 3
+    {
+        if obj_mapcamera4b.on = 1
+        and instance_exists(obj_camera)
+        {
+            with obj_mapcamera4b broken = 1
+            with obj_mapcamera4b alarm[0] = 150
+            sound_play(snd_static)
+        }
+        myroom = 4
+        global.playrightdoorscaresound = 1
+        {
+            
+        }
+    }
+    else if myroom = 4 
+        myroom = 5
+             }
+    else if myroom = 5 
+    {
+global.mypowercounter -= 0.1   
+if (!sound_isplaying(snd_power_drain))
+    sound_loop(snd_power_drain);
+    }
+if backtimer &lt; 0 //Leaves office when b.pillow is used, and moves back to showstage
+{
+    backtimer = mybacktimer
+    myroom = 4 or myroom = 5
+    {
+        if obj_mapcamera7.on = 1 
+        and instance_exists(obj_camera)
+        {
+            with obj_mapcamera7 broken = 1
+            with obj_mapcamera7 alarm[0] = 150
+            sound_play(snd_static)
+        }
+       
+        movetime = mymovetime
+        myroom = 1
+        sound_stop(snd_power_drain)
+        sound_play(snd_leave)
+        
+    }
+    
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="2">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if health &lt; 1
+ {
+    with obj_hours5 instance_destroy()
+    with obj_controller5 instance_destroy()
+    with obj_night5text instance_destroy()
+    with obj_controller4 instance_destroy()
+    with obj_night4text instance_destroy()
+    with obj_hours3 instance_destroy()
+    with obj_controller3 instance_destroy()
+    with obj_buttons_light instance_destroy()
+    with obj_buttons_doors instance_destroy()
+    with obj_camera instance_destroy()
+    with obj_night1text instance_destroy()
+    with obj_controller2 instance_destroy()
+    with obj_controller instance_destroy()
+    with obj_mapcamera1a instance_destroy()
+    with obj_mapcamera1b instance_destroy()
+    with obj_mapcamera2a instance_destroy()
+    with obj_mapcamera2b instance_destroy()
+    with obj_mapcamera4a instance_destroy()
+    with obj_mapcamera4b instance_destroy()
+    with obj_mapcamera5 instance_destroy()
+    with obj_mapcamera7 instance_destroy()
+    with obj_camera instance_destroy()
+    with obj_controller instance_destroy()
+    with obj_slidingmovement instance_destroy()
+    with obj_buttons_light instance_destroy()
+    with obj_hours2 instance_destroy()
+    with obj_night3text instance_destroy()
+    with obj_ballora_camera instance_destroy()
+    with spr_run instance_destroy()
+    with obj_salvage_camera instance_destroy()
+    with obj_buttons_light2 instance_destroy()
+    with obj_healthbar instance_destroy()
+    with obj_health_decrease instance_destroy()
+    with obj_torch_disable instance_destroy()
+    with obj_rockstarfreddy instance_destroy()
+    with obj_mask instance_destroy()
+    with obj_mask_button instance_destroy()
+    with obj_camera_button instance_destroy()
+    with obj_bonnet instance_destroy()
+    with snd_fredbear_jumpscare instance_destroy()
+    with obj_night1text instance_destroy() 
+    with obj_hours instance_destroy() 
+    with obj_controller instance_destroy()
+     sound_stop(snd_power_drain)
+     with (snd_power_drain) instance_destroy()
+     with (obj_funtimechica) instance_destroy()
+     sound_stop(snd_phonecall1)
+       with (snd_phonecall1) instance_destroy()
+        with (obj_torch_disable) instance_destroy()
+     with (obj_helpy_sleep) instance_destroy()
+           {
+           ID = instance_create(view_xview[0],view_yview[0],obj_jumpscare)
+    ID.sprite_index = spr_jumpscare_baby
+    sound_stop(snd_fredbear_jumpscare)
+    sound_play(snd_babyscare) 
+    sound_play(snd_babyvoice)
+     if instance_exists(obj_camera)
+                with obj_camera event_user(0)
+                if instance_exists(obj_salvage_camera)
+                with obj_salvage_camera event_user(0)
+        }
+        
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

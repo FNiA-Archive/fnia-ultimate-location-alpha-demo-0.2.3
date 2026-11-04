@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">global.area = spr_area_1a
+//Creates the camera buttons
+instance_create(x,y,obj_mapcamera1a)
+instance_create(x,y,obj_mapcamera1b)
+instance_create(x,y,obj_mapcamera2a)
+instance_create(x,y,obj_mapcamera2b)
+instance_create(x,y,obj_mapcamera2c)
+instance_create(x,y,obj_mapcamera2d)
+instance_create(x,y,obj_mapcamera4a)
+instance_create(x,y,obj_mapcamera4b)
+instance_create(x,y,obj_mapcamera5)
+instance_create(x,y,obj_mapcamera7)
+instance_create(x,y,obj_mapcamera8)
+instance_create(x,y,obj_mapcamera9)
+instance_create(x,y,obj_mapcamera10)
+with obj_mapcamera1a on = 1
+alarm[0] = 1900
+//Makes ambience sounds play
+sound_loop(snd_ambience)
+sound_loop(snd_energy)
+//Initial global variable values
+global.cancloseleftdoor = 1
+global.cancloserightdoor = 1
+global.cancloseventdoor = 1
+global.canopenleftdoor = 0
+global.canopenrightdoor = 0
+global.canopenventdoor = 0
+global.leftlights = 0
+global.rightlights = 0
+global.leftlightsbroken = 0
+global.leftrightsbroken = 0
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">//transition to salvage animation
+if pull = 0
+and image_index &gt; 10.2
+{
+    sprite_index = spr_light_salvage
+    image_speed = 0.5
+    instance_deactivate_object(obj_camera_button)
+    instance_deactivate_object(obj_mask_button)
+    instance_deactivate_object(obj_camera)
+    instance_deactivate_object(obj_mask)
+    instance_activate_object(obj_health_increase) //keeps baby happy while staring at her
+    instance_deactivate_object(obj_health_decrease)
+       
+}
+if pull = 1
+and image_index &lt; 0
+    instance_destroy()
+//image horizontal movement
+if move = 0
+{
+    offset -= 1
+    if offset &lt; -180
+    {
+        alarm[0] = 30
+        move = 2
+    }
+}
+if move = 1
+{
+    offset += 1
+    if offset &gt; 68
+    {
+        alarm[1] = 30
+        move = 2
+    }
+}
+interruptedimg += 0.5
+if instance_exists(obj_powerout)
+and sprite_index = spr_light_salvage
+{
+    sprite_index = spr_run2
+    image_index = 10.2
+    image_speed = -0.3
+    pull = 1
+    sound_stop(snd_walk_ballora)
+    sound_play(snd_turn_salvage)
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

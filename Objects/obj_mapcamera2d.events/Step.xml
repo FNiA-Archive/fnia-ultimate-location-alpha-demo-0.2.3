@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if instance_exists(obj_camera) and obj_camera.sprite_index = spr_cameraforeground
+    visible = 1
+else
+    visible = 0
+if global.area = myarea
+{
+    //Changes the camera image according to where the animatronic is located
+    if obj_mangle.myroom = 0 
+        global.myimg = 0
+    else if obj_mangle.myroom = 1 
+        global.myimg = 1
+    else if obj_mangle.myroom = 2 
+        global.myimg = 2
+    else if obj_mangle.myroom = 3
+        global.myimg = 3
+   else if obj_mangle.myroom = 4
+        global.myimg = 4
+    else if obj_mangle.myroom = 5
+        global.myimg = 5
+}
+if broken = 1 //Makes the camera turn into static image when camera is broken(When an animatronic is moving to another area)
+    area = spr_interrupted
+else
+    area = myarea
+if on = 1
+    global.area = area
+x = view_xview[0]+428
+y = view_yview[0]+208
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">mybacktimer = 75+random(220)//This is the time Rockstar Freddy stays in the door when b.pillow is used
+backtimer = mybacktimer
+mymovetime = 220+random(1050)//This is the time the animatronic takes to move. 
+movetime = 600+random(2300)//This is the initial time the animatronic takes to move to the signing room. 
+//Variable "myroom" stands for:
+//myroom = 0 - R Freddy at showstage
+//myroom = 1 - R freddy goes to signing room
+//myroom = 2 - R Freddy signing room on game
+//myroom = 3 - R Freddy at right hall
+//myroom = 4 - R Freddy at door (if left to long will drain power)
+//myroom = 5 - R Freddy draining power
+
+myroom = 0
+
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

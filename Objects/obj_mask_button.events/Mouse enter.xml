@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="MOUSE" id="10">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if instance_exists(obj_camera) or instance_exists(obj_salvage_camera) or instance_exists(obj_ballora_camera) 
+    exit
+if image_index = 0 or image_index = 2
+{
+    if dir = 0 and global.cancloseleftdoor = 1
+    {
+        image_index = 1
+        global.leftdoor = 1
+        global.rightlights = 0
+        global.leftlights = 0
+        global.cancloseleftdoor = 0
+       
+        instance_deactivate_object(obj_camera_button)
+        sound_play(snd_mask_on)
+
+    }
+    else if dir = 1 and global.cancloserightdoor = 1
+    {   
+        image_index = 3
+        global.rightdoor = 1
+        global.leftlights = 0
+        global.rightlights = 0
+        global.cancloserightdoor = 0
+        
+        instance_deactivate_object(obj_camera_button)
+        sound_play(snd_mask_on)
+
+    }
+}
+if image_index = 1 or image_index = 3
+{
+    if dir = 0 and global.canopenleftdoor = 1
+    {
+        image_index = 0
+        global.leftdoor = 0
+        global.rightlights = 0
+        global.leftlights = 0
+        global.canopenleftdoor = 0
+
+        instance_activate_object(obj_camera_button)
+        sound_play(snd_mask_off)
+    }
+    
+    else if dir = 1 and global.canopenrightdoor = 1
+    {   
+        image_index = 2
+        global.rightdoor = 0
+        global.leftlights = 0
+        global.rightlights = 0
+        global.canopenrightdoor = 0
+        
+        instance_activate_object(obj_camera_button)
+        sound_play(snd_mask_off)
+    }
+    
+}
+
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

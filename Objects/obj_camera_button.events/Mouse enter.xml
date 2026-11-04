@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="MOUSE" id="10">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">//Pulls monitor
+if not instance_exists(obj_camera)
+and not instance_exists(obj_powerout)
+and not instance_exists(obj_ballora_camera)
+and not instance_exists(obj_salvage_camera)
+    instance_create(view_xview[0],view_yview[0],obj_camera)
+    instance_activate_object(obj_health_decrease) //makes baby angry and proceeds to get out of salvage
+    instance_deactivate_object(obj_health_increase)
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

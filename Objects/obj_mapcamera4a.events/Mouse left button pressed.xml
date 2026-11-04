@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="MOUSE" id="4">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if not instance_exists(obj_camera)
+    exit
+global.area = myarea
+with obj_mapcamera1a on = 0
+with obj_mapcamera1b on = 0
+with obj_mapcamera2a on = 0
+with obj_mapcamera2b on = 0
+with obj_mapcamera2d on = 0
+with obj_mapcamera4a on = 1
+with obj_mapcamera4b on = 0
+with obj_mapcamera5 on = 0
+with obj_mapcamera7 on = 0
+with obj_mapcamera8 on = 0
+with obj_mapcamera9 on = 0
+with obj_mapcamera10 on = 0
+with obj_mapcamera11 on = 0
+instance_create(obj_camera.x,obj_camera.y,obj_cameraglitch)
+sound_play(snd_cameraswap)
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

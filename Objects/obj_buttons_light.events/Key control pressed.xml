@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="KEYPRESS" id="17">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if instance_exists(obj_camera) or instance_exists(obj_salvage_camera) or instance_exists(obj_ballora_camera)
+    exit
+if global.rightdoor = 1
+    exit
+if (obj_bonnie2.myroom = 6 and dir = 0)
+or (obj_funtimechica.myroom = 4 and dir = 0)
+or (obj_chica2.myroom = 6 and dir = 1)
+or (obj_mangle.myroom = 6 and dir = 1)
+
+{
+
+    sound_play(snd_error)
+    exit
+}
+if image_index = 0 or image_index = 2
+{
+    if dir = 0 and global.leftlightsbroken = 0
+    {
+        image_index = 1
+        global.rightlights = 0
+        global.leftlights = 1
+        global.poweruse += 1
+        if obj_funtimechica.myroom = 2 and global.playleftdoorscaresound = 1
+        {
+            sound_stop(snd_doorscare)
+            sound_play(snd_office_goldenfreddy)
+            global.playleftdoorscaresound = 0
+           
+        }
+        sound_play(snd_torch)  
+    }
+
+    else if dir = 1 and global.rightlightsbroken = 0
+    {   
+        image_index = 3
+        global.leftlights = 0
+        global.rightlights = 1
+        global.poweruse += 1
+        if obj_rockstarfreddy.myroom = 3 and global.playrightdoorscaresound = 1
+        {
+            sound_play(snd_doorscare)
+            global.playrightdoorscaresound = 0
+          
+        }
+        sound_play(snd_torch)
+    }
+       else if dir = 1 and global.rightlightsbroken = 0
+    {   
+        image_index = 3
+        global.leftlights = 0
+        global.rightlights = 1
+        global.poweruse += 1
+        if obj_mangle.myroom = 5 and global.playrightdoorscaresound = 1
+        {
+            sound_play(snd_doorscare)
+            global.playrightdoorscaresound = 0
+        }
+        sound_play(snd_torch)
+    }
+           else if dir = 1 and global.rightlightsbroken = 0
+    {   
+        image_index = 3
+        global.leftlights = 0
+        global.rightlights = 1
+        global.poweruse += 1
+        if obj_mangle.myroom = 5 and obj_chica2.myroom = 5 and global.playrightdoorscaresound = 1
+        {
+            sound_play(snd_doorscare)
+            global.playrightdoorscaresound = 0
+        
+        }
+        sound_play(snd_torch)
+    }
+}
+  
+         
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

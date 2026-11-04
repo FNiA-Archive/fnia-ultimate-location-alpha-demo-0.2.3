@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="KEYPRESS" id="87">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if global.rightdoor = 1
+    exit
+//checks the salvage room
+if not instance_exists(obj_salvage_camera)
+and not instance_exists(obj_powerout)
+and not instance_exists(obj_camera)
+and not instance_exists(obj_ballora_camera)
+    instance_create(view_xview[0],view_yview[0],obj_salvage_camera)
+    instance_activate_object(obj_camera_button)
+    instance_activate_object(obj_mask_button)
+     instance_activate_object(obj_camera)
+    instance_activate_object(obj_mask)
+
+  
+
+ 
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

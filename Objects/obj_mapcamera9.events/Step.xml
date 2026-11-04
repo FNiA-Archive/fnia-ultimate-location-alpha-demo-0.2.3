@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if instance_exists(obj_camera) and obj_camera.sprite_index = spr_cameraforeground
+    visible = 1
+else
+    visible = 0
+if global.area = myarea
+{
+    //Changes the camera image according to where the animatronic is located
+    if obj_springbonnie.myroom = 1
+        global.myimg = 1
+    else if obj_springbonnie.myroom = 2
+        global.myimg = 2
+    else if obj_springbonnie.myroom = 3
+        global.myimg = 4
+    else if obj_springbonnie.myroom = 4
+        global.myimg = 3
+    else
+        global.myimg = 0
+    if broken = 1
+    and area != spr_interrupted and instance_exists(obj_camera)
+    and obj_camera.sprite_index = spr_cameraforeground
+        instance_create(obj_camera.x,obj_camera.y,obj_cameraglitch)
+}
+if broken = 1
+    area = spr_interrupted
+else
+    area = myarea
+if on = 1
+    global.area = area
+x = view_xview[0]+390
+y = view_yview[0]+288
+
+//Variable "myroom" stands for:
+//myroom = 0 - SpringBonnie in closet, eyes shut
+//myroom = 1 - SpringBonnie peeking in spares and repairs
+//myroom = 2 - SpringBonnie close up to the camera in spares and repairs
+//myroom = 3 - SpringBonnie close up to the camera in spares and repairs with puppet
+//myroom = 4 - SpringBonnie leaving spares and repairs
+//myroom = 5 - SpringBonnie at left office door
+//myroom = 6 - Hugscares if left at left door to long
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

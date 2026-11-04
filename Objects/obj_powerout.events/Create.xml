@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">alarm[0] = 300+random(720) 
+alarm[2] = 550+random(975)
+image_speed = 0
+with obj_doors image_speed = -0.4
+sound_play(snd_powerdown)
+sound_stop(snd_power_gen)
+sound_stop(snd_ambience)
+sound_stop(snd_lights)
+global.leftlights = 0
+global.rightlights = 0
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

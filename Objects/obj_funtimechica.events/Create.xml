@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">mybacktimer = 125+random(350)//This is the time f chica stands in front hall way, when torch is used
+backtimer = mybacktimer
+mymovetime = 200+random(1500)//This is the time the animatronic takes to move. 
+movetime = 670+random(2100)//This is the initial time the animatronic takes to move to the second phase in the closet. 
+//Variable "myroom" stands for:
+//myroom = 0 - f chica at showstage
+//myroom = 1 -  looks at cam in showstage
+//myroom = 2 - f chica in front hall
+//myroom = 3 - f chica in office waiting
+//myroom = 4 - slaps player if torch isn't used
+
+myroom = 0
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

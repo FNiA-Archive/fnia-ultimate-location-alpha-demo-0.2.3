@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">mybacktimer = 5+random(20)//This is the time Ballora stays in the office's right  or left door and sings before going back to her stage.
+backtimer = mybacktimer
+mymovetime = 700+random(1200)//This is the time the animatronic takes to move. Change this to any value you want.
+movetime = 900+random(1050)//This is the initial time the animatronic takes to move to the second phase. 
+//Variable "myroom" stands for the room the animatronic is located.
+//myroom = 0 - Ballora stage(Phase 1 - spinning on dance)
+//myroom = 1 - (Phase 2 - wandering halls)
+//myroom = 2 - (Phase 3 - wandering halls)
+//myroom = 3 - by right or left door (her singing will alert which side she is on)
+//myroom = 4 - Jumpscare immediatelly if left or right office door is open
+//If you are going to edit the animatronic objects, be sure to edit as well objects that check the animatronic's variable "myroom" to work; those being the jumpscares and Draw event in obj_controller, obj_door, and all camera objects.
+myroom = 0
+alarm[0] = 150
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

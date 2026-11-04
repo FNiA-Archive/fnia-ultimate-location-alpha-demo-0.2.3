@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if global.poweruse&lt;0 then global.poweruse = 0
+if global.mypowercounter &lt; 1 //When power value is less than 1, makes you run out of energy
+{
+    instance_deactivate_object(obj_torch_disable)
+    with obj_buttons_light instance_destroy()
+    with obj_buttons_light2 instance_destroy()
+    with obj_buttons_doors instance_destroy()
+    with obj_doors instance_destroy()
+    with obj_ballora instance_destroy()
+    with obj_bonnet instance_destroy()
+    with obj_funtimechica instance_destroy()
+    with obj_salvage_camera instance_destroy()
+    with obj_ballora_camera instance_destroy()
+    with obj_rockstarfreddy instance_destroy()
+    with obj_office_funtimechica instance_destroy()
+    with obj_office_light instance_destroy()
+    with obj_camera_button instance_destroy()
+    with obj_mask_button instance_destroy()
+    with obj_health_increase instance_destroy()
+    with obj_health_decrease instance_destroy()
+    with obj_mask instance_destroy() 
+    with obj_night1text instance_destroy() 
+    with obj_hours instance_destroy() 
+        sound_stop(snd_power_drain)
+     with (snd_power_drain) instance_destroy()
+     sound_stop(snd_phonecall1)
+       with (snd_phonecall1) instance_destroy()
+       with (obj_torch_disable) instance_destroy()
+        with (obj_helpy_sleep) instance_destroy()
+     
+   
+    instance_create(0,0,obj_powerout)
+    instance_destroy()
+}
+if instance_exists(obj_powerout)
+    exit
+if global.poweruse &gt; 4
+    global.poweruse = 4
+if global.poweruse = 0 //If power bar have one square only
+    mypower -= 0.040 //Decreases power
+else if global.poweruse = 1 //If power bar have two squares
+    mypower -= 0.080 //Decreases power
+else if global.poweruse = 2 //If power bar have three squares
+    mypower -= 0.120 //Decreases power
+else if global.poweruse = 3 //If power bar have four squares
+    mypower -= 0.160 //Decreases power
+else if global.poweruse = 4 //If power bar have five squares
+    mypower -= 0.200 //Decreases power
+if mypower &lt; 0
+{
+    global.mypowercounter -= 1
+    mypower = 1
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

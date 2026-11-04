@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">//Pull camera up animation
+if pull = 0
+and image_index &gt; 3.2
+{
+    sprite_index = spr_cameraforeground
+    image_speed = 0
+    instance_create(x,y,obj_cameraglitch)
+}
+if pull = 1
+and image_index &lt; 0
+    instance_destroy()
+//Camera image horizontal movement
+if move = 0
+{
+    offset -= 1
+    if offset &lt; -180
+    {
+        alarm[0] = 30
+        move = 2
+    }
+}
+if move = 1
+{
+    offset += 1
+    if offset &gt; 68
+    {
+        alarm[1] = 30
+        move = 2
+    }
+}
+interruptedimg += 0.5
+if instance_exists(obj_powerout)
+and sprite_index = spr_cameraforeground
+{
+    sprite_index = spr_camera
+    image_index = 3.2
+    image_speed = -0.5
+    pull = 1
+    sound_stop(snd_monitorup)
+    sound_play(snd_monitordown)
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

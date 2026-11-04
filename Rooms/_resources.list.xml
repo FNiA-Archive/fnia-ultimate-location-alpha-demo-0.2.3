@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="rm_controls" type="RESOURCE"/>
+  <resource name="rm_menu" type="RESOURCE"/>
+  <resource name="rm_newspaperintro" type="RESOURCE"/>
+  <resource name="rm_game" type="RESOURCE"/>
+  <resource name="rm_gameover" type="RESOURCE"/>
+  <resource name="rm_extras" type="RESOURCE"/>
+</resources>
